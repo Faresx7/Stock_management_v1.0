@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1095</width>
+    <height>689</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#iosWidget {
+    background: #ffffff;               /* خلفية بيضا */
+    border-radius: 20px;               /* حواف ناعمة */
+    border: 1px solid #e5e5ea;         /* خط فاتح حوالين الويدجت */
+    padding: 15px;                     /* مسافة داخلية */
+    
+    /* ظل خفيف تحت الويدجت (iOS style shadow) */
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+/* أي Label جواه */
+QWidget#iosWidget QLabel {
+
+    color: #1c1c1e;                    /* لون النص أسود غامق زي iOS */
+}
+
+/* لو فيه Title Label */
+QWidget#iosWidget QLabel#title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+QLineEdit {
+    background: #ffffff;                 /* خلفية بيضا */
+    border: 1px solid #dcdcdc;           /* خط خفيف حوالين البوكس */
+    border-radius: 10px;                 /* حواف ناعمة */
+    padding: 8px 12px;                   /* مسافة داخلية علشان النص مايبقاش لازق في الحواف */
+    font-size: 15px;                     /* حجم خط زي iOS */
+    color: #000000;                      /* النص بالأسود */
+    selection-background-color: #007aff; /* لون التحديد أزرق iOS */
+    selection-color: #ffffff;            /* النص جوه التحديد يبقى أبيض */
+}
+
+QLineEdit:focus {
+    border: 1.5px solid #007aff;         /* عند التركيز (focus) يبان الإطار أزرق iOS */
+    background: #ffffff;                 /* الخلفية تفضل بيضا */
+}
+
+
+
+
+
+
+
+
+QListWidget {
+    background: #f9f9f9;         
+    border: 1px solid #dcdcdc;   
+    border-radius: 12px;         
+    padding: 5px;
+    outline: 0;                  
+}
+
+QListWidget::item {
+    background: transparent;
+    padding: 12px 15px;
+    border-bottom: 1px solid #e5e5e5;  
+    color: #333;
+    font-size: 15px;
+}
+
+QListWidget::item:last-child {
+    border-bottom: none;
+}
+
+QListWidget::item:hover {
+    background: #e5f0ff;   /* أزرق فاتح جدًا (Hover زي iOS) */
+    border-radius: 8px;
+}
+
+QListWidget::item:selected {
+    background: #007aff;   /* أزرق iOS الأساسي */
+    color: white;
+    border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+QTabWidget::pane {
+    border: 1px solid #dcdcdc;      /* خط خفيف حوالين المحتوى */
+    border-radius: 10px;            /* حواف ناعمة */
+     background: #f9f9f9           /* خلفية بيضا */
+}
+
+QTabBar::tab {
+    background: #f9f9f9;            /* خلفية فاتحة للتابات */
+    color: #555;                    /* لون رمادي للنص */
+    padding: 8px 20px;              /* مساحة جوه التاب */
+    border: 1px solid #dcdcdc;      /* خط رفيع حوالين كل تاب */
+    border-bottom: none;            /* نخلي التاب يبان متصل بالمحتوى */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-right: 2px;              /* مسافة بسيطة بين التابات */
+}
+
+QTabBar::tab:selected {
+    background: #ffffff;            /* التاب النشيط يبقى أبيض */
+    color: #007aff;                 /* لون iOS الأزرق للنص */
+    font-weight: bold;              /* يبان أوضح */
+}
+
+QTabBar::tab:hover {
+    background: #e5f0ff;            /* أزرق فاتح جدًا عند المرور */
+    color: #007aff;
+}
+
+QTabBar::tab:!selected {
+    margin-top: 2px;                /* يخلي التاب الغير نشيط شكله نازل سنة صغيرة */
+}
+
+
+
+
+
+ QPushButton {
+        background-color: #3498db;
+        color: white;
+        border-radius: 25px;
+        padding: 6px;
+    }
+    QPushButton:hover {
+        background-color: #2980b9;  /* اللون يتغير لما أقف بالماوس */
+    }
+    QPushButton:pressed {
+        background-color: #1c5980;  /* اللون يتغير لما أضغط */
+    }
+ QLabel {
+        color: black;
+    }
+    QLabel:hover {
+        color: red;  /* النص يبقى أحمر لما أقف بالماوس */
+    }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QListWidget" name="listWidget">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>0</y>
+      <width>171</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+      <horstretch>0</horstretch>
+      <verstretch>12</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="font">
+     <font>
+      <family>Comic Sans MS</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <item>
+     <property name="text">
+      <string>كاشير</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>إضافة منتج</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+    </item>
+   </widget>
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>881</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::RightToLeft</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>كاشير</string>
+     </attribute>
+     <widget class="QTableWidget" name="cashier_w">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>80</y>
+        <width>767</width>
+        <height>359</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>رمز المنتج</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>اسم المنتج</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>السعر</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>الكميه</string>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
+      </column>
+     </widget>
+     <widget class="QLCDNumber" name="total_price">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>360</y>
+        <width>281</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLCDNumber {
+    background-color: #ffffff;      /* خلفية سوداء */
+    color: #000000;                 /* أرقام خضراء فاتحة زي شاشة آيفون قديم */
+          /* إطار رفيع */
+	border:9px #000000;
+    border-radius: 12px;            /* زوايا مدورة */
+    padding: 4px;
+}
+
+QLCDNumber:disabled {
+    color: #555555;                 /* لو اتقفل يبقى رمادي */
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="line_input">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>30</y>
+        <width>391</width>
+        <height>38</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>30</y>
+        <width>89</width>
+        <height>42</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>رمز المنتج:</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ok_btn">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>480</y>
+        <width>231</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>حسناً</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_btn">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>480</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+ QPushButton {
+        background-color: #ff383c;
+        color: white;
+        border-radius: 25px;
+        padding: 6px;
+    }
+    QPushButton:hover {
+        background-color: #e9152d;  /* اللون يتغير لما أقف بالماوس */
+    }
+    QPushButton:pressed {
+        background-color: #e9152d;  /* اللون يتغير لما أضغط */
+    }</string>
+      </property>
+      <property name="text">
+       <string>الغاء</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>310</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>اجمالي السعر:</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>مبيعات</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>120</y>
+        <width>481</width>
+        <height>144</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>رمز المنتج:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="newproID_input"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>190</y>
+        <width>491</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_3">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>اسم المنتج:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="newproName_input"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>260</y>
+        <width>491</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_4">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_5">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>سعر المنتج:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="line_input_"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="formLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>330</y>
+        <width>481</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout_5">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_6">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>ربح المنتج:</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="line_input_5"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="addpro_cancel_btn">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>470</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+ QPushButton {
+        background-color: #ff383c;
+        color: white;
+        border-radius: 25px;
+        padding: 6px;
+    }
+    QPushButton:hover {
+        background-color: #e9152d;  /* اللون يتغير لما أقف بالماوس */
+    }
+    QPushButton:pressed {
+        background-color: #e9152d;  /* اللون يتغير لما أضغط */
+    }</string>
+      </property>
+      <property name="text">
+       <string>الغاء</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addpro_ok_btn">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>470</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>حسناً</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="gridLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>110</y>
+        <width>160</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_9"/>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1095</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>tabWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>949</x>
+     <y>384</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>600</x>
+     <y>298</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

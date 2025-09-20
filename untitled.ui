@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>876</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Cascadia Mono SemiBold</family>
+    <pointsize>12</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+    background-color: #7393B3; 
+}
+QPushButton {
+    background-color: #007aff;            /* iOS blue */
+    color: white;
+    border: none;
+    border-radius: 23px;                   /* pill-shaped */
+    padding: 12px 33px;
+    font-weight: 600;
+    font-size: 17px;
+    box-shadow: 0 4px 19px rgba(0, 122, 255, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+QPushButton:hover {
+    background-color: #0061cc;            /* slightly darker blue */
+    box-shadow: 0 6px 12px rgba(0, 94, 203, 0.45);
+}
+
+QPushButton:pressed {
+    background-color: #0050a0;
+    box-shadow: inset 0 8px 16px rgba(0,0,0,0.45);
+
+}
+/* Modern iOS-style LineEdit with glass effect */
+QLineEdit {
+    background-color: rgba(255, 255, 255, 0.750);  /* شبه شفاف */
+    backdrop-filter: blur(12px);                   /* تأثير الزجاج */
+    border: 1.5px solid rgba(255, 255, 255, 0.4);  /* حد خفيف */
+    border-radius: 23px;                           /* أكثر دائرية */
+    padding: 14px 20px;
+    font-size: 17px;
+    color: #1c1c1e;
+    font-family: -apple-system, &quot;SF Pro Text&quot;, &quot;Segoe UI&quot;, Roboto, Oxygen,
+        Ubuntu, Cantarell, &quot;Helvetica Neue&quot;, Arial, sans-serif;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+}
+
+/* عند التركيز يظهر إطار أزرق داخلي */
+QLineEdit:focus {
+    border: 1.5px solid #007aff;
+    box-shadow: 0 0 12px rgba(0, 122, 255, 0.25);
+    outline: none;
+}
+
+/* Placeholder text */
+QLineEdit::placeholder {
+    color: rgba(28, 28, 30, 0.5);
+    font-style: italic;
+}
+</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit_2">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>340</y>
+     <width>271</width>
+     <height>57</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>430</y>
+     <width>271</width>
+     <height>57</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>540</y>
+     <width>167</width>
+     <height>47</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe UI Semibold</family>
+     <pointsize>-1</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>تسجيل الدخول</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>340</y>
+     <width>181</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>اسم المستخدم:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>430</y>
+     <width>181</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>كلمة المرور:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>140</y>
+     <width>281</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Segoe Fluent Icons</family>
+     <pointsize>18</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>مرحباً</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
